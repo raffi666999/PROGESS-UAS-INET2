@@ -21,10 +21,9 @@
           <td>No</td>
           <td>Nama</td>
           <td>Alamat</td>
-          <td>UTS</td>
-          <td>UAS</td>
-          <td>UN</td>
-          <td>Rata"</td>
+          <td>Pertanyaan 1</td>
+          <td>Pertanyaan 2</td>
+          <td>Pertanyaan 3</td>
           <td>Status</td>
           <td>Actions</td>
         </tr>
@@ -37,13 +36,9 @@
           <td><?= $no++ ?></td>
           <td><?= $p['nama'] ?></td>
           <td><?= $p['alamat'] ?></td>
-          <td><?= $p['nilai_uts_1'] ?></td>
-          <td><?= $p['nilai_us'] ?></td>
-          <td><?= $p['nilai_un'] ?></td>
-          <td>
-          <!-- number_format(value, 2) -->
-            <?=  number_format(($p['nilai_uts_1'] + $p['nilai_us'] + $p['nilai_un']) / 3, 2) ?>
-          </td>
+          <td><?= $p['Pertanyaan_1'] ?></td>
+          <td><?= $p['Pertanyaan_2'] ?></td>
+          <td><?= $p['Pertanyaan_3'] ?></td>
           <?php
 
           if($p['status'] == 0) {
@@ -78,4 +73,3 @@
 </div>
 <!-- /.container-fluid -->
 
-<?php include('../template/footer.php'); ?>

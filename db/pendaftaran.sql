@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2020 at 12:15 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Jan 04, 2023 at 08:59 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,14 +24,80 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `anggota`
+--
+
+CREATE TABLE `anggota` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(25) NOT NULL,
+  `nim` varchar(25) NOT NULL,
+  `jabatan` varchar(25) NOT NULL,
+  `angkatan` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`id`, `nama`, `nim`, `jabatan`, `angkatan`) VALUES
+(9, 'Nadya Azizah', '19041001', 'Komandan', '2019'),
+(10, 'Anir', '22041132', 'Wakil Komandan', '2022'),
+(11, 'Rahmat Aditya', '19041132', 'Bendahara', '2019');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kegiatan`
+--
+
+CREATE TABLE `kegiatan` (
+  `id` int(11) NOT NULL,
+  `gambar` varchar(25) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `isi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kegiatan`
+--
+
+INSERT INTO `kegiatan` (`id`, `gambar`, `judul`, `isi`) VALUES
+(1, 'latdas.jpg', 'Kegiatan Latihan Dasar 120 Jam', 'Foto Saat Pelatihan Dasar 120 Jam Di Lapangan'),
+(2, 'latgab.png', 'Kegiatan Latihan Gabungan', 'Foto Saat Latihan Gabungan Perti Se Kalimantan Selatan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kunjungan`
+--
+
+CREATE TABLE `kunjungan` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(25) NOT NULL,
+  `nim` varchar(25) NOT NULL,
+  `tanggal` date NOT NULL,
+  `ket` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kunjungan`
+--
+
+INSERT INTO `kunjungan` (`id`, `nama`, `nim`, `tanggal`, `ket`) VALUES
+(9, 'Uciha Madara', '19041111', '2023-01-08', 'Sakit Kepala'),
+(10, 'Saitama', '19041120', '2023-01-09', 'Sakit Gigi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nilai`
 --
 
 CREATE TABLE `nilai` (
   `id` int(11) NOT NULL,
-  `nilai_un` double DEFAULT NULL,
-  `nilai_us` double DEFAULT NULL,
-  `nilai_uts_1` double NOT NULL,
+  `Pertanyaan_1` varchar(50) DEFAULT NULL,
+  `Pertanyaan_2` varchar(50) DEFAULT NULL,
+  `Pertanyaan_3` varchar(50) NOT NULL,
   `status` int(1) NOT NULL,
   `pendaftar_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,12 +106,8 @@ CREATE TABLE `nilai` (
 -- Dumping data for table `nilai`
 --
 
-INSERT INTO `nilai` (`id`, `nilai_un`, `nilai_us`, `nilai_uts_1`, `status`, `pendaftar_id`) VALUES
-(1, 80, 80, 80, 1, 1),
-(2, 90, 90, 90, 1, 2),
-(3, 80, 80, 80, 2, 3),
-(4, 90, 90, 90, 0, 4),
-(5, 70, 80, 80, 0, 5);
+INSERT INTO `nilai` (`id`, `Pertanyaan_1`, `Pertanyaan_2`, `Pertanyaan_3`, `status`, `pendaftar_id`) VALUES
+(7, 'rizal', 'roy', 'agi', 2, 9);
 
 -- --------------------------------------------------------
 
@@ -61,7 +122,7 @@ CREATE TABLE `pendaftar` (
   `tgl_lahir` date DEFAULT NULL,
   `jenis_kelamin` enum('L','P') DEFAULT NULL,
   `agama` varchar(45) DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `telepon` varchar(45) DEFAULT NULL,
   `foto` varchar(100) NOT NULL,
@@ -73,11 +134,10 @@ CREATE TABLE `pendaftar` (
 --
 
 INSERT INTO `pendaftar` (`id`, `nama`, `tmpt_lahir`, `tgl_lahir`, `jenis_kelamin`, `agama`, `alamat`, `email`, `telepon`, `foto`, `users_id`) VALUES
-(1, 'Edi Siswanto', 'Banyuwangi', '1999-06-22', 'L', 'islam', 'Toyamas, wringin rejo, Gambiran kabupaten Banyuwangi', 'est23.edi@gmail.com', '082302002407', '', 9),
-(2, 'anton', 'Banyuwangi', '1998-08-12', 'L', 'islam', 'Toyamas, wringin rejo, Gambiran kabupaten Banyuwangi', 'anton@gmail.com', '082302002407', '', 10),
-(3, 'Tini', 'Banyuwangi', '1999-01-11', 'P', 'islam', 'Toyamas, wringin rejo, Gambiran kabupaten Banyuwangi', 'tini@gmail.com', '08123456789', '', 11),
-(4, 'Parman', 'Banyuwangi', '1999-01-01', 'L', 'islam', 'Toyamas, wringin rejo, Gambiran kabupaten Banyuwangi', 'parman@gmail.com', '08123456789', '', 12),
-(5, 'Armin', 'Jember', '1999-06-12', 'P', 'islam', 'Jember, Sumber sari, rt 03. rw 04', 'armin@gmail.com', '081234567543', 'Armin.png', 13);
+(6, '', '', '1970-01-01', '', '', '', '', '', '', 14),
+(7, 'raffi', 'banjarmasin', '2022-12-30', 'L', 'islam', 'gfghhg', 'mroyrizqym@gmail.com', '08213213131', '', 15),
+(9, 'Raffi', 'Banjarmasin', '2022-12-20', 'L', 'islam', 'jl.benua anyar', 'raffi@gmail.com', '012311431', 'Raffi.jpg', 17),
+(10, 'Muhammad Raffi Arsyad', 'Banjarmasin', '2000-01-30', '', 'islam', 'Banjarmasin', 'raffi123@gmail.com', '12345678910', '', 18);
 
 -- --------------------------------------------------------
 
@@ -99,15 +159,32 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nama`, `username`, `password`, `level`) VALUES
 (8, 'Administrator', 'admin@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin'),
-(9, 'Edi Siswanto', 'est23.edi@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'siswa'),
-(10, 'anton', 'anton@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'siswa'),
-(11, 'Tini', 'tini@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'siswa'),
-(12, 'Parman', 'parman@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'siswa'),
-(13, 'Armin', 'armin@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'siswa');
+(14, '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'siswa'),
+(15, 'raffi', 'mroyrizqym@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'siswa'),
+(17, 'Raffi', 'raffi@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'siswa'),
+(18, 'Muhammad Raffi Arsyad', 'raffi123@gmail.com', '409eb95609b0871803ca5aeb16f0987f', 'siswa');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `anggota`
+--
+ALTER TABLE `anggota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kegiatan`
+--
+ALTER TABLE `kegiatan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kunjungan`
+--
+ALTER TABLE `kunjungan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `nilai`
@@ -136,22 +213,40 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `anggota`
+--
+ALTER TABLE `anggota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `kegiatan`
+--
+ALTER TABLE `kegiatan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `kunjungan`
+--
+ALTER TABLE `kunjungan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pendaftar`
 --
 ALTER TABLE `pendaftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

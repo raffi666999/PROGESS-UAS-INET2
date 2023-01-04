@@ -98,20 +98,16 @@
             
             <ul class="list-group">
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Nilai Ujian Nasional</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_un'] ?></small>
+                <h6 class="mb-0" style="color: black;">Mengapa Anda Ingin Masuk KSR PMI ?</h6>
+                <small class="text-muted"><?= $data_nilai['Pertanyaan_1'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Nilai Ujian Sekolah</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_us'] ?></small>
+                <h6 class="mb-0" style="color: black;">Tuliskan pengalaman anda ketika sedang melakukan pertolongan pertama pada luka seseorang ?</h6>
+                <small class="text-muted"><?= $data_nilai['Pertanyaan_2'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Nilai UTS</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_uts_1'] ?></small>
-              </li>
-              <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Nilai Rata"</h6>
-                <small class="text-muted"><?= number_format(($data_nilai['nilai_uts_1'] + $data_nilai['nilai_us'] + $data_nilai['nilai_un']) / 3, 2) ?></small>
+                <h6 class="mb-0" style="color: black;">Apa yang ingin anda lakukan ketika sudah menjadi anggota KSR PMI STMIK IB ?</h6>
+                <small class="text-muted"><?= $data_nilai['Pertanyaan_3'] ?></small>
               </li>
             </ul>
 

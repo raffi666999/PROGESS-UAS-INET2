@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Aplikasi pendaftaran Siswa SMKN DARUL ULUM MUNCAR.">
+  <meta name="description" content="Aplikasi Pendaftaran Anggota Baru KSR PMI STMIK IB.">
   <meta name="author" content="e-development.tech">
 
-  <title>Aplikasi Pendaftaran Siswa</title>
+  <title>Aplikasi Pendaftaran Anggota Baru KSR PMI STMIK IB</title>
 
   <!-- gambar title -->
   <link rel="icon" type="image/png" href="../assets/img/swd.png">
@@ -93,6 +93,15 @@
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <span>Dashboard</span></a>
           </li>
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="anggota.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Data Anggota</span></a>
+          </li>
 
           <!-- Divider -->
           <hr class="sidebar-divider my-0">
@@ -101,6 +110,25 @@
             <a class="nav-link" href="pendaftaran.php">
               <i class="fas fa-fw fa-list"></i>
               <span>Data Pendaftaran</span></a>
+          </li>
+
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="kunjungan.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Data Kunjungan</span></a>
+          </li>
+        
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="kegiatan.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Data Kegiatan</span></a>
           </li>
 
           <!-- Divider -->
@@ -118,7 +146,7 @@
       <hr class="sidebar-divider my-0">
 
       <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+        <a class="nav-link" href="../logout_control.php" data-toggle="modal" data-target="#logoutModal">
           <i class="fas fa-fw fa-sign-out-alt"></i>
           <span>Logout</span></a>
       </li>

@@ -68,7 +68,7 @@
                     <div class="col-auto">
                       <i class="fas fa-spinner text-warning mb-3" style="font-size: 90px;"></i>
                     </div>
-                    <p class="card-text">Terima kasih telah melakukan pendaftaran di SMP SWADHIPA 1 NATAR</p>
+                    <p class="card-text">Terima kasih telah melakukan pendaftaran di KSR PMI STMIK INDONESIA BANJARMASIN</p>
                     <span class="badge badge-danger" style="font-size: 20px;"></span>
                   </div>
                   <div class="card-footer text-muted">
@@ -152,6 +152,10 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   4. MEMILIKI KOMITMEN DALAM ORGANISASI
                   <span class="badge badge-info badge-pill"></span>
+                  </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  5. SETELAH LOLOS SELEKSI DIWAJIBKAN MELAKUKAN DAFTAR ULANG SECARA OFFLINE
+                  <span class="badge badge-info badge-pill"></span>
                 </li>
               </ul>
               <p class="text-danger mt-3"></p>
@@ -234,4 +238,4 @@
 </div>
 <!-- /.container-fluid -->
 
-<?php include('../template/footer.php'); ?>
+

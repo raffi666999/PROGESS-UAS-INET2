@@ -30,15 +30,15 @@
 
                 <div class="form-group">
                     <label for="un">Mengapa anda ingin masuk KSR PMI ?</label>
-                    <input type="text" class="form-control" id="un" placeholder="Ubah Jawaban" name="un" value="<?php if(isset($data_nilai['nilai_un'])) { echo $data_nilai['nilai_un']; } ?>">
+                    <input type="text" class="form-control" id="Pertanyaan_1" placeholder="Ubah Jawaban" name="un" value="<?php if(isset($data_nilai['Pertanyaan_1'])) { echo $data_nilai['Pertanyaan_1']; } ?>">
                 </div>
                 <div class="form-group">
                     <label for="us">Tuliskan pengalaman anda ketika sedang melakukan pertolongan pertama pada luka seseorang ?</label>
-                    <input type="text" class="form-control" id="us" placeholder="Ubah Jawaban" name="us" value="<?php if(isset($data_nilai['nilai_us'])) { echo $data_nilai['nilai_us']; } ?>">
+                    <input type="text" class="form-control" id="Pertanyaan_2" placeholder="Ubah Jawaban" name="us" value="<?php if(isset($data_nilai['Pertanyaan_2'])) { echo $data_nilai['Pertanyaan_2']; } ?>">
                 </div>
                 <div class="form-group">
                     <label for="uts_1">Apa yang ingin anda lakukan ketika sudah menjadi anggota KSR PMI STMIK IB ?</label>
-                    <input type="text" class="form-control" id="uts_1" placeholder="Ubah Jawaban" name="uts_1" value="<?php if(isset($data_nilai['nilai_uts_1'])) { echo $data_nilai['nilai_uts_1']; } ?>">
+                    <input type="text" class="form-control" id="Pertanyaan_3" placeholder="Ubah Jawaban" name="uts_1" value="<?php if(isset($data_nilai['Pertanyaan_3'])) { echo $data_nilai['Pertanyaan_3']; } ?>">
                 </div>
                 <hr>
                 <div class="text-right">
@@ -53,4 +53,3 @@
 </div>
 <!-- /.container-fluid -->
 
-<?php include('../template/footer.php'); ?>

@@ -1,8 +1,9 @@
 <?php
-    include("config/koneksi.php");
-    session_start();
+include('config/koneksi.php');
+session_start();
 
-    $kegiatan = mysqli_query($koneksi, "SELECT * FROM kegiatan");
+$kunjungan = mysqli_query($koneksi, "SELECT * FROM anggota");
+$no = 0;
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,11 +57,12 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="">TENTANG KAMI</a>
+                            <a class="nav-link" href="index.php">TENTANG KAMI</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="kunjungan.php">KUNJUNGAN RUKES</a>
-                            </li>
+                        </li>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="anggota.php">ANGGOTA</a>
                         </li>
@@ -77,76 +79,38 @@
     <main role="main" style="position: relative">
         <div class="container mt-5">
             <div class="row pt-5">
-                <div class="col-md-7">
-                    <h2 class="text-dark">PENDAFTARAN ONLINE <br> KSR PMI STMIK INDONESIA BANJARMASIN  <br></h2>
-                    <p class="lead">
-                        Untuk mahasiswa yang ingin bergabung bisa mendaftar melalui website ini atau langsung datang ke tempat pendaftaran
-                    </p>
-                    <a href="registrasi.php" class="btn btn-danger rounded-pill">DAFTAR SEKARANG</a>
-                </div>
-                <div class="col-md-5">
-                <img src="assets/img/PMI.png" width="600" height="300" alt="">
+                <div class="col">
+                    <h2 class="text-dark text-center">DAFTAR ANGGOTA <br> KSR PMI STMIK INDONESIA BANJARMASIN  <br></h2>
                 </div>
             </div>
-
-            <div class="row mt-5">
-                <div class="col-lg-4">
-                    
-                   
-                        
-                    </p>
+            <div class="row pt-5">
+                <div class="col">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">NIM</th>
+                            <th scope="col">Jabatan</th>
+                            <th scope="col">Angkatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($row = mysqli_fetch_object($kunjungan)): ?>
+                            <?php $no++ ?>
+                                <tr>
+                                    <th scope="row"><?=$no?></th>
+                                    <td><?=$row->nama?></td>
+                                    <td><?=$row->nim?></td>
+                                    <td><?=$row->jabatan?></td>
+                                    <td><?=$row->angkatan?></td>
+                                </tr>
+                            <?php endwhile ?>
+                        </tbody>
+                    </table>
                 </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                  
-                
-                        
-                    </p>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                  
-                   
-                    </p>
-                </div>
-                <!-- /.col-lg-4 -->
             </div>
-            <!-- /.row -->
-            <!-- START THE FEATURETTES -->
-            <?php $i = 1 ?>
-            <?php while($row = mysqli_fetch_object($kegiatan)): ?>
-                <?php 
-                $ganjil1 = "";
-                $ganjil2 = "";
-                if($i % 2 == 0){
-                    $ganjil1 = "order-md-2";
-                    $ganjil2 = "order-md-1";
-                }
-                $i++;
-                ?>
-                <hr class="featurette-divider">
-                <div class="row featurette">
-                    <div class="col-md-7 <?=$ganjil1?>">
-                        <h2 class="featurette-heading"><?=$row->judul?> <span class="text-muted"></span></h2>
-                        <p class="lead">
-                        <?=$row->isi?>
-                        </p>
-                    </div>
-                    <div class="col-md-5 <?=$ganjil2?>">
-                    <img src="assets/img/<?=$row->gambar?>" width="450" height="300" alt="">
-                    </div>
-                </div>
-            <?php endwhile ?>
-            <hr class="featurette-divider">
-            <!-- /END THE FEATURETTES -->
         </div>
-        <!-- /.container -->
-        <!-- FOOTER -->
-        <footer class="container">
-        <p class="float-right">
-            <a href="#">Back to top</a>
-        </p>
-        </footer>
     </main>
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>

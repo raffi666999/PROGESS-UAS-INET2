@@ -80,7 +80,7 @@
                         <input name="telepon" type="text" class="form-control" id="telepon" placeholder="Telepon" value="<?= $data_pendaftar['telepon'] ?>">
                     </div>
                 </div>
-                    <div class="form-group row">
+                <!-- <div class="form-group row">
                     <div class="col-md-6">
                         <label for="password">Password</label>
                         <input name="password" type="password" class="form-control" id="password" placeholder="Password">
@@ -89,7 +89,7 @@
                         <label for="ulangi_password">Ulangi Password</label>
                         <input name="ulangi_password" type="password" class="form-control" id="ulangi_password" placeholder="Ulangi Password">
                     </div>
-                </div>
+                </div> -->
 
                 
                 
@@ -117,4 +117,3 @@
 </div>
 <!-- /.container-fluid -->
 
-<?php include('../template/footer.php'); ?>

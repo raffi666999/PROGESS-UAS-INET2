@@ -35,7 +35,7 @@
   <div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
 
       <div class="col-md-7">
 
@@ -90,6 +90,7 @@
                   <div class="text-center">
                     <a class="small" href="registrasi.php">Registrasi Anggota Baru!</a>
                   </div>
+                    <a class="text" href="index.php">Keluar</a>
                 </div>
               </div>
             </div>

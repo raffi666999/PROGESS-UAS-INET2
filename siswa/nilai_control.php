@@ -32,7 +32,7 @@ if(mysqli_num_rows($result_pendaftar)){
             // update
             $id_nilai = $_POST['id_nilai'];
 
-            $sql_update_nilai = "UPDATE nilai set nilai_un='$un', nilai_us='$us', nilai_uts_1='$uts_1' where id='$id_nilai'";
+            $sql_update_nilai = "UPDATE nilai set Pertanyaan_1='$un', Pertanyaan_2='$us', Pertanyaan_3='$uts_1' where id='$id_nilai'";
             $query_update_nilai = mysqli_query($koneksi, $sql_update_nilai);
 
             if($query_update_nilai){
@@ -49,7 +49,7 @@ if(mysqli_num_rows($result_pendaftar)){
 
         } else {
             // insert
-            $sql_insert_nilai = "INSERT INTO nilai (nilai_un, nilai_us, nilai_uts_1, status, pendaftar_id) values ('$un', '$us', '$uts_1', 0, '$id_pendaftar')";
+            $sql_insert_nilai = "INSERT INTO nilai (Pertanyaan_1, Pertanyaan_2, Pertanyaan_3, status, pendaftar_id) values ('$un', '$us', '$uts_1', 0, '$id_pendaftar')";
     
             $query_insert_nilai = mysqli_query($koneksi, $sql_insert_nilai);
 

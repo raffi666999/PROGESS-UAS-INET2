@@ -23,6 +23,7 @@
 
   <!-- css datepicker -->
   <link href="../assets/vendor/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
+  <script src="../assets/js/tinymce/js/tinymce/tinymce.min.js"></script>
 
   <style>
     .logo-login {
@@ -129,6 +130,15 @@
             <a class="nav-link" href="kegiatan.php">
               <i class="fas fa-fw fa-list"></i>
               <span>Data Kegiatan</span></a>
+          </li>
+
+                    <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="obat.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Obat</span></a>
           </li>
 
           <!-- Divider -->

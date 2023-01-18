@@ -18,6 +18,7 @@ if(mysqli_num_rows($result_pendaftar)){
         $agama = $_POST['agama'];
         $alamat = $_POST['alamat'];
         $email = $_POST['email'];
+        $nrp = $_POST['nrp'];
         $telepon = $_POST['telepon'];
 
         // GAMBAR
@@ -57,7 +58,7 @@ if(mysqli_num_rows($result_pendaftar)){
 
         }
 
-        $sql_update_profil = "UPDATE pendaftar set nama='$nama', tmpt_lahir='$tempat_lahir', tgl_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', alamat='$alamat', email='$email', telepon='$telepon' where id='$id_pendaftar'";
+        $sql_update_profil = "UPDATE pendaftar set nama='$nama', tmpt_lahir='$tempat_lahir', tgl_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', alamat='$alamat', email='$email', nrp='$nrp', telepon='$telepon' where id='$id_pendaftar'";
 
         $query_update_profil = mysqli_query($koneksi, $sql_update_profil);
 

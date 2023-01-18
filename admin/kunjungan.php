@@ -44,7 +44,7 @@
           
           
           if(mysqli_num_rows($all_pendaftar) == 0) {
-            echo "<tr><td colspan='8' align='center'><b>Belum Ada pendaftar baru</b></td></tr>";
+            echo "<tr><td colspan='8' align='center'><b>Belum Ada Kunjugan Baru</b></td></tr>";
           }
 
           ?>

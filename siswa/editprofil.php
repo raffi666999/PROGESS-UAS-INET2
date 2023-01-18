@@ -79,6 +79,10 @@
                         <label for="telepon">Telepon</label>
                         <input name="telepon" type="text" class="form-control" id="telepon" placeholder="Telepon" value="<?= $data_pendaftar['telepon'] ?>">
                     </div>
+                    <div class="col-md-6">
+                        <label for="nrp">NRP</label>
+                        <input name="nrp" type="text" class="form-control" id="nrp" placeholder="NRP" value="<?= $data_pendaftar['nrp'] ?>">
+                    </div>
                 </div>
                 <!-- <div class="form-group row">
                     <div class="col-md-6">

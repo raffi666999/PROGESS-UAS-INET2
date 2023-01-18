@@ -13,6 +13,7 @@ if(isset($_POST['btn_registrasi'])) {
     $agama = $_POST['agama'];
     $alamat = $_POST['alamat'];
     $email = $_POST['email'];
+    $nrp = $_POST['nrp'];
     $telepon = $_POST['telepon'];
     $password = md5($_POST['password']);
     $ulangi_password = md5($_POST['ulangi_password']);
@@ -35,7 +36,7 @@ if(isset($_POST['btn_registrasi'])) {
         }
 
         // insert table pendaftar
-        $sql_pendaftar = "INSERT INTO pendaftar (nama, tmpt_lahir, tgl_lahir, jenis_kelamin, agama, alamat, email, telepon, users_id) values ('$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$agama', '$alamat', '$email', '$telepon', '$id_user')";
+        $sql_pendaftar = "INSERT INTO pendaftar (nama, tmpt_lahir, tgl_lahir, jenis_kelamin, agama, alamat, email, nrp, telepon, users_id) values ('$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$agama', '$alamat', '$email', '$nrp', '$telepon', '$id_user')";
 
         $result_pendaftar = mysqli_query($koneksi, $sql_pendaftar);
 

@@ -30,10 +30,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Keterangan</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="ket" placeholder="Masukkan Keterangan">
+            <textarea name="keterangan" id="tinymce" cols="30" rows="10"></textarea>
         </div>
         <button type="submit" name="daftar" class="btn btn-primary">Submit</button>
     </form>
     </div>
   </div>
 </div>
+<script>
+  tinymce.init({
+    selector: 'textarea#tinymce'
+  })
+</script>

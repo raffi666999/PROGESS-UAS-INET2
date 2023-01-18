@@ -28,7 +28,7 @@ if(mysqli_num_rows($result_pendaftar)){
         $us = $_POST['us'];
         $uts_1 = $_POST['uts_1'];
     
-        $sql_insert_nilai = "INSERT INTO nilai (nilai_un, nilai_us, nilai_uts_1, status, pendaftar_id) values ('$un', '$us', '$uts_1', 0, '$id_pendaftar')";
+        $sql_insert_nilai = "INSERT INTO nilai (pertanyaan_1, pertanyaan_2, pertanyaan_3, status, pendaftar_id) values ('$un', '$us', '$uts_1', 0, '$id_pendaftar')";
     
         $query_insert_nilai = mysqli_query($koneksi, $sql_insert_nilai);
 

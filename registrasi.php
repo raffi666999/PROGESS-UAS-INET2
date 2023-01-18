@@ -106,9 +106,13 @@
                             <input name="email" type="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <div class="col-md-6">
-                            <label for="telepon">Telepon</label>
-                            <input name="telepon" type="text" class="form-control" id="telepon" placeholder="Telepon">
+                            <label for="nrp">NRP</label>
+                            <input name="nrp" type="text" class="form-control" id="nrp" placeholder="NRP">
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">Telepon</label>
+                        <input type="text" class="form-control" id="telepon" placeholder="Telepon" name="telepon">
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6">

@@ -60,6 +60,10 @@
                 <small class="text-muted"><?= $data_pendaftar['email'] ?></small>
               </li>
               <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">NRP</h6>
+                <small class="text-muted"><?= $data_pendaftar['nrp'] ?></small>
+              </li>
+              <li class="list-group-item">
                 <h6 class="mb-0" style="color: black;">Telepon</h6>
                 <small class="text-muted"><?= $data_pendaftar['telepon'] ?></small>
               </li>

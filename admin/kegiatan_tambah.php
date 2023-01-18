@@ -26,10 +26,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Isi</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="isi" placeholder="Masukkan Isi/Keterangan">
+            <textarea name="isi" id="tinymce" cols="30" rows="10"></textarea>
         </div>
         <button type="submit" name="daftar" class="btn btn-primary">Submit</button>
     </form>
     </div>
   </div>
 </div>
+<script>
+  tinymce.init({
+    selector: 'textarea#tinymce'
+  })
+</script>
